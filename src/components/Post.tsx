@@ -1,4 +1,3 @@
-// Post.tsx
 
 import React from 'react';
 

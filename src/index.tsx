@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Header from './components/Header';
-import Footer from './components/Footer';
-import Post from './components/Post';
 import PostList from './components/PostList';
 
 const root = ReactDOM.createRoot(
@@ -13,7 +11,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Header/>  
-    <Footer/>
     <PostList/>
     
   </React.StrictMode>
