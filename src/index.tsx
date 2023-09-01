@@ -4,6 +4,8 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Post from './components/Post';
+import PostList from './components/PostList';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,6 +14,8 @@ root.render(
   <React.StrictMode>
     <Header/>  
     <Footer/>
+    <PostList/>
+    
   </React.StrictMode>
 );
 
