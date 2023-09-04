@@ -1,6 +1,7 @@
 
 import React from 'react';
 
+
 type PostProps = {
   title: string;
   content: string;
@@ -12,6 +13,7 @@ const Post: React.FC<PostProps> = ({ title, content }) => {
       <h2>{title}</h2>
       <p>{content}</p>
     </div>
+    
   );
 };
 

@@ -21,18 +21,53 @@ const PostList: React.FC = () => {
     setPosts(savedPosts);
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem('posts', JSON.stringify(posts));
-  }, [posts]);
+  // useEffect(() => {
+  //   localStorage.setItem('posts', JSON.stringify(posts));
+  // }, [posts]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setNewPost({ ...newPost, [name]: value });
   };
 
+  // const handleCreatePost = () => {
+  //   if (newPost.title && newPost.content) {
+  //     setPosts([...posts, { ...newPost, id: Date.now() }]);
+  //     setNewPost({ id: 0, title: '', content: '' });
+  //   }
+  // };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault(); // Prevent the default form submission behavior
+
+    if (newPost.title && newPost.content) {
+      const newPostData = { ...newPost, id: Date.now() };
+      const updatedPosts = [...posts, newPostData];
+
+      // Save the updated posts to localStorage
+      localStorage.setItem('posts', JSON.stringify(updatedPosts));
+
+      setPosts(updatedPosts);
+      setNewPost({ id: 0, title: '', content: '' });
+    }
+  };
+  
+
+  useEffect(() => {
+    const savedPosts = JSON.parse(localStorage.getItem('posts') || '[]');
+    setPosts(savedPosts);
+  }, []);
+  
+  
   const handleCreatePost = () => {
     if (newPost.title && newPost.content) {
-      setPosts([...posts, { ...newPost, id: Date.now() }]);
+      const newPostData = { ...newPost, id: Date.now() };
+      const updatedPosts = [...posts, newPostData];
+  
+      // Save the updated posts to localStorage
+      localStorage.setItem('posts', JSON.stringify(updatedPosts));
+  
+      setPosts(updatedPosts);
       setNewPost({ id: 0, title: '', content: '' });
     }
   };
@@ -40,7 +75,7 @@ const PostList: React.FC = () => {
   return (
     <div>
       <h1>Post List</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="title">Title:</label>
           <input
