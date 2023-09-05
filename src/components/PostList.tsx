@@ -84,7 +84,7 @@ const PostList: React.FC = () => {
   
   
   const handleCreatePost = () => {
-    if (newPost.title && newPost.description) {
+    if (newPost.title && newPost.description && newPost.category && newPost.creationDate && newPost.creator) {
       const newPostData = { ...newPost, id: Date.now() };
       const updatedPosts = [...posts, newPostData];
   
@@ -100,6 +100,26 @@ const PostList: React.FC = () => {
     <div>
       <h1>Create Post</h1>
       <form onSubmit={handleSubmit}>
+      <div>
+          <label htmlFor="Name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={newPost.creator.name}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="userName">Username:</label>
+          <input
+            type="text"
+            id="userName"
+            name="userName"
+            value={newPost.creator.userName}
+            onChange={handleInputChange}
+          />
+        </div>
         <div>
           <label htmlFor="title">Title:</label>
           <input
@@ -111,6 +131,24 @@ const PostList: React.FC = () => {
           />
         </div>
         <div>
+          <label htmlFor="category">Category:</label>
+          <textarea
+            id="category"
+            name="category"
+            value={newPost.category}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="creationDate">Created at:</label>
+          <textarea
+            id="creationDate"
+            name="creationDate"
+            value={newPost.creationDate}
+            onChange={handleInputChange}
+          />
+          </div>
+          <div>
           <label htmlFor="description">Description:</label>
           <textarea
             id="description"
@@ -118,14 +156,14 @@ const PostList: React.FC = () => {
             value={newPost.description}
             onChange={handleInputChange}
           />
-        </div>
+          </div>
         <button type="button" onClick={handleCreatePost}>
           Create Post
         </button>
       </form>
       <div className="post-list">
         {posts.map((post) => (
-          <Post key={post.id} title={post.title} content={post.description} />
+          <Post key={post.id} title={post.title} description={post.description} creationDate={post.creationDate} name={post.creator.name} userName={post.creator.userName}/>
         ))}
       </div>
     </div>
