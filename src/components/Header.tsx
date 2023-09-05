@@ -33,10 +33,9 @@ const Header = () => {
         <input title="Searchbar" type="text" name="SearchBar" id="Searchbar" placeholder='Search...' />
         <img src="https://www.svgrepo.com/show/127033/magnifying-glass.svg" alt="search" id='img'/>
         <button id='src-btn'> Search</button>
-        {/* <a href="ThreadCreationView.tsx" id='create-btn'>Create new Post</a> */}
       </div>
     </div>
   )
 }
 
-export default Header;
+export default Header
