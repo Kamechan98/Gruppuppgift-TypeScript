@@ -1,6 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Post from './Post';
+import '../index.css';
+
 
 type PostData = {
   id: number;
@@ -77,7 +79,7 @@ const PostList: React.FC = () => {
       <h1>Post List</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="title">Title:</label>
+          <label id= "titleText" htmlFor="title">Title:</label>
           <input
             type="text"
             id="title"
@@ -87,7 +89,7 @@ const PostList: React.FC = () => {
           />
         </div>
         <div>
-          <label htmlFor="content">Content:</label>
+          <label id="contentText" htmlFor="content">Content:</label>
           <textarea
             id="content"
             name="content"
