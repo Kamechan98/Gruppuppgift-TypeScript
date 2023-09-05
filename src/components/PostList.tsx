@@ -2,18 +2,50 @@
 import React, { useState, useEffect } from 'react';
 import Post from './Post';
 
-type PostData = {
+interface User {
+	id: number;
+	name: string;
+	userName: string;
+}
+
+type PostCategory = "THREAD" | "QNA"
+
+interface PostData {
   id: number;
-  title: string;
-  content: string;
-};
+	title: string;
+	category: PostCategory;
+	creationDate: string;
+	description: string;
+	creator: User
+}
+
+interface QNAPost extends PostData {
+	category: "QNA";
+	isAnswered: boolean;
+	commentAnswerId?: number
+}
+
+interface Comment {
+	id: number; //(tillagt)
+	thread: number;
+	content: string;
+	creator: User
+}
+
 
 const PostList: React.FC = () => {
   const [posts, setPosts] = useState<PostData[]>([]);
   const [newPost, setNewPost] = useState<PostData>({
-    id: 0,
-    title: '',
-    content: '',
+  id: 0,
+	title: '',
+	category: 'QNA' || 'THREAD',
+	creationDate: '',
+	description: '',
+	creator: {
+  id: 0,
+	name: '',
+	userName: '',
+  }
   });
 
   useEffect(() => {
@@ -21,26 +53,18 @@ const PostList: React.FC = () => {
     setPosts(savedPosts);
   }, []);
 
-  // useEffect(() => {
-  //   localStorage.setItem('posts', JSON.stringify(posts));
-  // }, [posts]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setNewPost({ ...newPost, [name]: value });
   };
 
-  // const handleCreatePost = () => {
-  //   if (newPost.title && newPost.content) {
-  //     setPosts([...posts, { ...newPost, id: Date.now() }]);
-  //     setNewPost({ id: 0, title: '', content: '' });
-  //   }
-  // };
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault(); // Prevent the default form submission behavior
 
-    if (newPost.title && newPost.content) {
+    if (newPost.title && newPost.description) {
       const newPostData = { ...newPost, id: Date.now() };
       const updatedPosts = [...posts, newPostData];
 
@@ -48,7 +72,7 @@ const PostList: React.FC = () => {
       localStorage.setItem('posts', JSON.stringify(updatedPosts));
 
       setPosts(updatedPosts);
-      setNewPost({ id: 0, title: '', content: '' });
+      setNewPost({ id: 0, title: '', description: '', category: "QNA" || "THREAD", creationDate: '', creator: {id: 0, name: '', userName: ''} });
     }
   };
   
@@ -60,7 +84,7 @@ const PostList: React.FC = () => {
   
   
   const handleCreatePost = () => {
-    if (newPost.title && newPost.content) {
+    if (newPost.title && newPost.description) {
       const newPostData = { ...newPost, id: Date.now() };
       const updatedPosts = [...posts, newPostData];
   
@@ -68,13 +92,13 @@ const PostList: React.FC = () => {
       localStorage.setItem('posts', JSON.stringify(updatedPosts));
   
       setPosts(updatedPosts);
-      setNewPost({ id: 0, title: '', content: '' });
+      setNewPost({ id: 0, title: '', description: '', category: "QNA" || "THREAD", creationDate: '', creator: {id: 0, name: '', userName: ''} });
     }
   };
 
   return (
     <div>
-      <h1>Post List</h1>
+      <h1>Create Post</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="title">Title:</label>
@@ -87,11 +111,11 @@ const PostList: React.FC = () => {
           />
         </div>
         <div>
-          <label htmlFor="content">Content:</label>
+          <label htmlFor="description">Description:</label>
           <textarea
-            id="content"
-            name="content"
-            value={newPost.content}
+            id="description"
+            name="description"
+            value={newPost.description}
             onChange={handleInputChange}
           />
         </div>
@@ -101,7 +125,7 @@ const PostList: React.FC = () => {
       </form>
       <div className="post-list">
         {posts.map((post) => (
-          <Post key={post.id} title={post.title} content={post.content} />
+          <Post key={post.id} title={post.title} content={post.description} />
         ))}
       </div>
     </div>
