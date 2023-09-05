@@ -1,9 +1,14 @@
 import React from 'react'
+import PostList from '../components/PostList'
+
 //Lista alla trådar
 const ThreadListView = () => {
   return (
-    <div>ThreadListView</div>
+    <div>
+      <h2>Thread List</h2>
+      <PostList />
+    </div>
   )
 }
 
-export default ThreadListView
+export default ThreadListView;
