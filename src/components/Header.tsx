@@ -1,5 +1,28 @@
 import React from 'react'
 import '../index.css';
+// import './index.tsx';
+// import { useNavigate } from 'react-router-dom';
+
+
+  // const navigate = useNavigate();
+  
+  // const goToPage1 = () => {
+  
+  //   // This will navigate to second component
+  //   navigate('/threadcreationview'); 
+  // }
+
+  // const gotToPage2 = () => {
+  
+  //   // This will navigate to first component
+  //   navigate('/threadlistview'); 
+  // };
+
+  // const gotToPage3 = () => {
+  
+  //   // This will navigate to first component
+  //   navigate('/threaddetailview'); 
+  // };
 
 const Header = () => {
   return (
