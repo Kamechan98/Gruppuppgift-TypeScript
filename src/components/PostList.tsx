@@ -77,10 +77,10 @@ const PostList: React.FC = () => {
   };
   
 
-  useEffect(() => {
-    const savedPosts = JSON.parse(localStorage.getItem('posts') || '[]');
-    setPosts(savedPosts);
-  }, []);
+  // useEffect(() => {
+  //   const savedPosts = JSON.parse(localStorage.getItem('posts') || '[]');
+  //   setPosts(savedPosts);
+  // }, []);
   
   
   const handleCreatePost = () => {
@@ -101,14 +101,16 @@ const PostList: React.FC = () => {
       <h1>Create Post</h1>
       <form onSubmit={handleSubmit}>
       <div>
-          <label htmlFor="Name">Name:</label>
-          <input
+          <label htmlFor="name">Name:</label>
+          <div>
+          <input title='enter your name'
             type="text"
             id="name"
             name="name"
             value={newPost.creator.name}
             onChange={handleInputChange}
           />
+          </div>
         </div>
         <div>
           <label htmlFor="userName">Username:</label>
@@ -163,7 +165,7 @@ const PostList: React.FC = () => {
       </form>
       <div className="post-list">
         {posts.map((post) => (
-          <Post key={post.id} title={post.title} description={post.description} creationDate={post.creationDate} name={post.creator.name} userName={post.creator.userName}/>
+          <Post key={post.id} title={post.title} category={post.category} description={post.description} creationDate={post.creationDate} />
         ))}
       </div>
     </div>
