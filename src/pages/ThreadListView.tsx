@@ -5,13 +5,10 @@ import Post from '../components/Post'
 const ThreadListView = () => {
   return (
     <div>
-      <PostList/>
+      {/* <PostList/>
       
-      {/* <div className="post-list">
-        {posts.map((post) => (
-          <Post key={post.id} title={post.title} content={post.content} />
-        ))} */}
-      {/* </div> */}
+      <Post></Post> */}
+      
     </div>
   )
 }

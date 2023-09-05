@@ -3,15 +3,19 @@ import React from 'react';
 
 
 type PostProps = {
-  title: string;
-  content: string;
+	title: string;
+  category: string;
+	creationDate: string;
+	description: string;
 };
 
-const Post: React.FC<PostProps> = ({ title, content }) => {
+const Post: React.FC<PostProps> = ({ title, description, category, creationDate}) => {
   return (
     <div className="post">
       <h2>{title}</h2>
-      <p>{content}</p>
+      <p>{category}</p>
+      <p>{description}</p>
+      <p>{creationDate}</p>
     </div>
     
   );
