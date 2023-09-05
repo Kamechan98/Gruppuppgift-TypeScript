@@ -371,11 +371,12 @@ const PostList: React.FC = () => {
       <div className="post-list">
         {posts.map((post) => (
           <div key={post.id}>
-            <h3>{post.title}</h3>
-            <p>{newPost.creator.name}</p>
-            <p>{newPost.creator.userName}</p>
-            <p>{post.description}</p>
-            <p>{post.creationDate}</p>
+           <h3>{post.title}</h3>
+      <p>Name: {post.creator.name}</p>
+      <p>Username: {post.creator.userName}</p>
+      <p>Category: {post.category}</p>
+      <p>Created at: {post.creationDate}</p>
+      <p>Description: {post.description}</p>
             
           </div>
         ))}
