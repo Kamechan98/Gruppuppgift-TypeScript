@@ -1,7 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Post: React.FC = () => {
+  const navigate = useNavigate()
   const [posts, setPosts] = useState<PostData[]>([]);
   const [newPost, setNewPost] = useState<PostData>({
     id: 0,
@@ -43,9 +45,10 @@ const Post: React.FC = () => {
   
       // Save the updated posts to localStorage
       localStorage.setItem('posts', JSON.stringify(updatedPosts));
-  
+      
       setPosts(updatedPosts);
-  
+      
+      navigate(`/post/${newPostData.id}`)
       // Clear the input fields by resetting newPost
       setNewPost({
         id: 0,
