@@ -180,36 +180,6 @@
 
 import React, { useState, useEffect } from 'react';
 
-interface User {
-  id: number;
-  name: string;
-  userName: string;
-}
-
-type PostCategory = "THREAD" | "QNA";
-
-interface PostData {
-  id: number;
-  title: string;
-  category: PostCategory;
-  creationDate: string;
-  description: string;
-  creator: User;
-}
-
-interface QNAPost extends PostData {
-  category: "QNA";
-  isAnswered: boolean;
-  commentAnswerId?: number;
-}
-
-interface Comment {
-  id: number;
-  thread: number;
-  content: string;
-  creator: User;
-}
-
 const Post: React.FC = () => {
   const [posts, setPosts] = useState<PostData[]>([]);
   const [newPost, setNewPost] = useState<PostData>({
