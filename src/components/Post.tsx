@@ -100,7 +100,8 @@ const Post: React.FC = () => {
 
   return (
     <div>
-      <h1>Create Post</h1>
+    <div className='create-post'>
+        <h1>Create Post</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
@@ -156,22 +157,12 @@ const Post: React.FC = () => {
             value={newPost.description}
             onChange={handleInputChange}
           />
+        
         </div>
-        <button type="submit">Create Post</button>
+        <button id='cr8btn' type="submit">Create Post</button>
       </form>
-      {/* <div className="post-list">
-        {posts.map((post) => (
-          <div key={post.id}>
-           <h3>{post.title}</h3>
-      <p>Name: {post.creator.name}</p>
-      <p>Username: {post.creator.userName}</p>
-      <p>Category: {post.category}</p>
-      <p>Created at: {post.creationDate}</p>
-      <p>Description: {post.description}</p>
-            
-          </div>
-        ))} */}
-      {/* </div> */}
+    </div>
+      
     </div>
   );
 };
