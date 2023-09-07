@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 
 const Post: React.FC = () => {
@@ -174,4 +175,5 @@ const Post: React.FC = () => {
     </div>
   );
 };
+
 export default Post;

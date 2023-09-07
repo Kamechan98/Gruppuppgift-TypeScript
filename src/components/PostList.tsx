@@ -1,12 +1,6 @@
-import React, { useState, useEffect } from 'react';
-
-import Post from './Post';
-
 const PostList = () => {
-    const savedPosts: PostData[]  = JSON.parse(localStorage.getItem('posts') || '[]');
+    const savedPosts: PostData[] = JSON.parse(localStorage.getItem('posts') || '[]');
     console.log(savedPosts);
-
-
     {}
     return (
       <div>
@@ -24,9 +18,9 @@ const PostList = () => {
               </div>
             )
           })}
-        </div>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
-  export default PostList;
+export default PostList;
