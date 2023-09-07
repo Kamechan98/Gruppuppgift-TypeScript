@@ -57,6 +57,16 @@ h1 {
   right: 650px;
 }
 
+.create-post {
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: solid 1px black;
+  height: 450px;
+  margin-top: 30px;
+}
+
 
 h1 {
   text-align: center
@@ -79,6 +89,18 @@ button {
   position: absolute;
   top: 5%;
   right: 25%;
+  transform: translate(-50%, -50%);
+}
+
+#cr8btn {
+  background-color: rgb(109, 160, 169); 
+  color: #000000; 
+  padding: 10px 20px; 
+  border-radius: 10%;
+  border: solid 2px black;
+  position: absolute;
+  top: 75%;
+  right: 40%;
   transform: translate(-50%, -50%);
 }
 
@@ -136,4 +158,18 @@ form {
   display: flex;
   align-items: center;
   flex-direction:column
+}
+
+#post {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: baseline;
+  width: 800px;
+  border: solid black 3px;
+  margin: 30px;
+  margin-left: 300px;
+  padding-left: 30px;
+  background-color: bisque;
+  font-size: large;
 }
