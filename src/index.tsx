@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Header from './components/Header';
 import PostList from './components/PostList';
 import Post from './components/Post';
+import App from './App';
 
 // function Navigate() {
 //   const navigate = useNavigate();
@@ -34,7 +35,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Header/>  
-    <PostList/>
+    <App/>
     {/* <Post/> */}
     
   </React.StrictMode>
