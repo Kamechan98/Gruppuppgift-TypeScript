@@ -23,8 +23,8 @@ const ThreadDetailView = () => {
   if (!post) return <div>Posten hittades inte</div>;
 
   return (
-    <div> key={post.id}
-                <p>Title: {post.title}</p>
+    <div className='post' id='post'> key={post.id} 
+                <h3>Title: {post.title}</h3>
                 <p>Description: {post.description}</p>
                 <p>Category: {post.category}</p>
                 <p>Creation Date: {post.creationDate}</p>
