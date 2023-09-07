@@ -6,7 +6,7 @@ const Post: React.FC = () => {
   const [newPost, setNewPost] = useState<PostData>({
     id: 0,
     title: '',
-    category: 'QNA',
+    category: 'THREAD',
     creationDate: '',
     description: '',
     creator: {
@@ -72,7 +72,7 @@ const Post: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault(); // Prevent the default form submission behavior
   
-    if (newPost.title && newPost.description) {
+    if (newPost.title && newPost.description && newPost.category) {
       const newPostData = { ...newPost, id: Date.now() };
       const updatedPosts = [...posts, newPostData];
   
@@ -86,7 +86,7 @@ const Post: React.FC = () => {
         id: 0,
         title: '',
         description: '',
-        category: 'QNA',
+        category: 'THREAD', // Set a default category if needed
         creationDate: '',
         creator: {
           id: 0,
@@ -96,6 +96,7 @@ const Post: React.FC = () => {
       });
     }
   };
+  
   
 
   return (
@@ -131,14 +132,13 @@ const Post: React.FC = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div>
-          <label htmlFor="category">Category:</label>
-          <input
-            id="category"
-            name="category"
-            value={newPost.category}
-            onChange={handleInputChange}
-          />
+        <div className='radio-btn'>
+        <input type="radio" title='thread' id="THREAD" name="category" value="THREAD" checked={newPost.category === "THREAD"} onChange={handleInputChange} />
+        <label htmlFor="thread">THREAD</label><br />
+
+        <input type="radio" title='qna' id="QNA" name="category" value="QNA" checked={newPost.category === "QNA"} onChange={handleInputChange} />
+        <label htmlFor="qna">QNA</label><br />
+
         </div>
         <div>
           <label htmlFor="creationDate">Created at:</label>
