@@ -6,7 +6,7 @@ const Post: React.FC = () => {
   const [newPost, setNewPost] = useState<PostData>({
     id: 0,
     title: '',
-    category: 'QNA' || 'THREAD',
+    category: 'THREAD',
     creationDate: '',
     description: '',
     creator: {
@@ -133,10 +133,10 @@ const Post: React.FC = () => {
           />
         </div>
         <div className='radio-btn'>
-        <input type="radio" id="THREAD" name="category" value="THREAD" checked={newPost.category === "THREAD"} onChange={handleInputChange} />
+        <input type="radio" title='thread' id="THREAD" name="category" value="THREAD" checked={newPost.category === "THREAD"} onChange={handleInputChange} />
         <label htmlFor="thread">THREAD</label><br />
 
-        <input type="radio" id="QNA" name="category" value="QNA" checked={newPost.category === "QNA"} onChange={handleInputChange} />
+        <input type="radio" title='qna' id="QNA" name="category" value="QNA" checked={newPost.category === "QNA"} onChange={handleInputChange} />
         <label htmlFor="qna">QNA</label><br />
 
         </div>
