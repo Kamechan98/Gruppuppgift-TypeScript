@@ -92,6 +92,15 @@ button {
   transform: translate(-50%, -50%);
 }
 
+.radio-btn{
+  display: flex;
+  flex-direction: row;
+}
+#QNA, #THREAD {
+  height: 15px;
+  width: 90px;
+}
+
 #cr8btn {
   background-color: rgb(109, 160, 169); 
   color: #000000; 
