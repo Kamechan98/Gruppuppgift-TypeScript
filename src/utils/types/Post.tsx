@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-const PostList = () => {
-    const savedPosts: PostData[] = JSON.parse(localStorage.getItem('posts') || '[]');
-    console.log(savedPosts);
-    {}
-    return (
-      <div>
-        <div>
-          {savedPosts.map(function(post){
-            console.log("POSTS", post.creator)
-            return(
-              <div key={post.id}>
-                <p>Title: {post.title}</p>
-                <p>Description: {post.description}</p>
-                <p>Category: {post.category}</p>
-                <p>Creation Date: {post.creationDate}</p>
-                <p>Creator name: {post.creator.name}</p>
-                <p>Username: {post.creator.userName}</p>
-              </div>
-            )
-          })}
-=======
 // import React, { useState, useEffect } from 'react';
 // import Post from './Post';
 
@@ -232,7 +210,7 @@ interface Comment {
   creator: User;
 }
 
-const PostList: React.FC = () => {
+const Post: React.FC = () => {
   const [posts, setPosts] = useState<PostData[]>([]);
   const [newPost, setNewPost] = useState<PostData>({
     id: 0,
@@ -390,7 +368,7 @@ const PostList: React.FC = () => {
         </div>
         <button type="submit">Create Post</button>
       </form>
-      <div className="post-list">
+      {/* <div className="post-list">
         {posts.map((post) => (
           <div key={post.id}>
            <h3>{post.title}</h3>
@@ -401,11 +379,9 @@ const PostList: React.FC = () => {
       <p>Description: {post.description}</p>
             
           </div>
-        ))}
->>>>>>> 9977228c4d4b2a6b30d037253ca4111e7ac02022
-      </div>
+        ))} */}
+      {/* </div> */}
     </div>
   );
 };
-
-export default PostList;
+export default Post;
