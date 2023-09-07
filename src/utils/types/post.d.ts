@@ -15,7 +15,7 @@ interface QNAPost extends PostData {
   commentAnswerId?: number;
 }
 
-interface Comment {
+interface PostComment {
   id: number;
   thread: number;
   content: string;
