@@ -33,47 +33,12 @@ const Post: React.FC = () => {
     });
   };
 
-  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-  //   const { name, value } = e.target;
-  //   setNewPost({
-  //     ...newPost, 
-  //     creator: {
-  //       ...newPost.creator,
-  //       [name]: value,
-  //     },
-  //   });
-  // };
-
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-
-  //   if (newPost.title && newPost.description) {
-  //     const newPostData = { ...newPost, id: Date.now() };
-  //     const updatedPosts = [...posts, newPostData];
-
-  //     localStorage.setItem('posts', JSON.stringify(updatedPosts));
-
-  //     setPosts(updatedPosts);
-  //     setNewPost({
-  //       id: 0,
-  //       title: '',
-  //       description: '',
-  //       category: 'QNA',
-  //       creationDate: '',
-  //       creator: {
-  //         id: 0,
-  //         name: '',
-  //         userName: '',
-  //       },
-  //     });
-  //   }
-  // };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault(); // Prevent the default form submission behavior
   
     if (newPost.title && newPost.description && newPost.category) {
-      const newPostData = { ...newPost, id: Date.now() };
+      const newPostData: PostData = { ...newPost, id: Date.now() };
       const updatedPosts = [...posts, newPostData];
   
       // Save the updated posts to localStorage
