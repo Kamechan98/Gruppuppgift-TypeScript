@@ -126,8 +126,8 @@ button {
 #content {
   position: absolute;
   right: 600px;
-  width: 150px;
-  height: 20px;
+  width: 200px;
+  height: 100px;
   margin-top: 30px;
 }
 
@@ -193,7 +193,7 @@ form {
   font-size: large;
 }
 
-#comment {
+.comment {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
