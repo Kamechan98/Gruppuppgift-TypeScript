@@ -65,7 +65,7 @@ const CommentList = () => {
       <input className="commentInput" type="name" name="name" id="name" value={newComment.creator.name} onChange={handleInputChange}/>
       <label htmlFor="userName">Username</label>
       <input className="commentInput" type="userName" name="userName" id="userName" value={newComment.creator.userName} onChange={handleInputChange}/>
-      <label htmlFor="comment">Comment</label>
+      <label htmlFor="comment" id='comment-label'>Comment</label>
       <input className="commentInput" type="content" title="content "name="content" id="content" value={newComment.content} onChange={handleInputChange}/>
       <button className='commentButton' id='commentButton'>Send comment</button>
     </form>
