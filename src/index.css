@@ -20,6 +20,7 @@ code {
   background-color: rgb(255, 191, 63);
 
 }
+
 a:link {
   text-decoration: none;
   color: black;
@@ -99,7 +100,7 @@ button {
   border: solid 2px black;
   position: absolute;
   top: 5%;
-  right: 25%;
+  right: 20%;
   transform: translate(-50%, -50%);
 }
 
