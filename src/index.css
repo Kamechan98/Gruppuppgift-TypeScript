@@ -126,8 +126,8 @@ button {
 #content {
   position: absolute;
   right: 600px;
-  width: 150px;
-  height: 20px;
+  width: 200px;
+  height: 100px;
   margin-top: 30px;
 }
 
@@ -193,7 +193,7 @@ form {
   font-size: large;
 }
 
-#comment {
+.comment {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -218,8 +218,14 @@ h3 {
   border-radius: 10%;
   border: solid 2px black;
   position: absolute;
-  top: 125%;
-  right: 35%;
+  top: 102%;
+  right: 25%;
   transform: translate(-50%, -50%);
+}
+
+#comment-label{
+  position: relative;
+  left: 260px;
+  bottom: 130px;
 }
 

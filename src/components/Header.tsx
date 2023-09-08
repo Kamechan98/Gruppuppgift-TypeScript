@@ -29,7 +29,7 @@ const Header = () => {
         
         {/* <label htmlFor="text">Search</label> */}
         <input title="Searchbar" type="text" name="SearchBar" id="Searchbar" placeholder='Search...' />
-        <img src="https://www.svgrepo.com/show/127033/magnifying-glass.svg" alt="search" id='img'/>
+        {/* <img src="https://www.svgrepo.com/show/127033/magnifying-glass.svg" alt="search" id='img'/> */}
         <button id='src-btn'> Search</button>
         <a href='/post' id='create-btn'>Create new Post</a>
       </div>
